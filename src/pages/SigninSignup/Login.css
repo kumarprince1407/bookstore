@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  font: normal normal medium 25px/33px "Roboto";
+}
+
+.Signup-link {
+  cursor: pointer;
+}
+.Login-link {
+  position: relative;
+  cursor: pointer;
+}
+
+/* active::after: This is the selector. It targets an element with the class name "active" and
+its pseudo-element "::after," which is used to create an additional element after the content
+of the selected element. */
+
+.active::after {
+  content: "";
+  position: absolute;
+  background-color: #a03037 !important;
+  height: 5px;
+  width: 22px;
+  border-radius: 4px;
+  bottom: -5px;
+  left: 34%;
+}
