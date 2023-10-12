@@ -138,7 +138,7 @@ export default function SearchBar({
       {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem> */}
 
       {/* Uncomment below line later when required */}
-      {/* <MenuItem onClick={onLogOut}>Log Out</MenuItem> */}
+      <MenuItem onClick={onLogOut}>Log Out</MenuItem>
     </Menu>
   );
 

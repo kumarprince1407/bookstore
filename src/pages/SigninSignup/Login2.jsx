@@ -32,39 +32,40 @@ const Login2 = () => {
   });
 
   //Uncomment later on
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //Creating a submit function to handle form submission:
   const submit = async (event) => {
     event.preventDefault(); //// Prevent the default form submission behavior
 
     //// Validating the user's email and password using regular expressions
-    let emailTesting = emailRegex.test(data.email);
-    let passwordTesting = passwordRegex.test(data.password);
+    //let emailTesting = emailRegex.test(data.email);
+    //let passwordTesting = passwordRegex.test(data.password);
 
     //If email is invalid, set an error message
-    if (emailTesting === false) {
-      setError({
-        EmailTrue: true,
-        EmailError: "Please enter a valid email address!",
-      });
-    } else if (passwordTesting === false) {
-      //If password is invalid, set an error message
-      setError({
-        PasswordTrue: true,
-        PasswordError: "Please enter a valid password!",
-      });
-    }
+    // if (emailTesting === false) {
+    //   setError({
+    //     EmailTrue: true,
+    //     EmailError: "Please enter a valid email address!",
+    //   });
+    // } else if (passwordTesting === false) {
+    //   //If password is invalid, set an error message
+    //   setError({
+    //     PasswordTrue: true,
+    //     PasswordError: "Please enter a valid password!",
+    //   });
+    // }
     // If both email and password are valid, proceed with form submission
-    if (emailTesting === true && passwordTesting === true) {
-      console.log(data); // Log the user's data
-      const response = await userSignIn(data); // Call the signIn function for authentication
-      console.log(response); // Log the authentication response
-      localStorage.setItem("token", response.data.id); //Check- Stores an authentication token - read about it
+    // if (emailTesting === true && passwordTesting === true) {
+    // if (passwordTesting === true) {
+    console.log(data); // Log the user's data
+    const response = await userSignIn(data); // Call the signIn function for authentication
+    console.log(response); // Log the authentication response
+    localStorage.setItem("token", response.data.id); //Check- Stores an authentication token - read about it
 
-      //Uncomment later on
-      //navigate("/dashboard");
-    }
+    //Uncomment later on
+    navigate("/dashboard");
+    // }
 
     console.log(data); //Log the user's data again
   };
@@ -105,6 +106,7 @@ const Login2 = () => {
           <h3>LOGIN</h3>
           <button
             id="loginbutton1"
+            onClick={() => navigate("/signup")}
             style={{
               width: "150px",
               height: "35px",
@@ -123,7 +125,7 @@ const Login2 = () => {
             id="email"
             label="Enter Email"
             variant="outlined"
-            //onChange={change}
+            onChange={change}
             fullWidth
             error={error.EmailTrue}
             helperText={error.EmailError}
@@ -135,7 +137,7 @@ const Login2 = () => {
             id="password"
             label="Enter password"
             variant="outlined"
-            //onChange={change}
+            onChange={change}
             fullWidth
             error={error.PasswordTrue}
             helperText={error.PasswordError}

@@ -6,7 +6,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
 import { userSignIn, userSignup } from "../../services/userService";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup2 = () => {
   const emailRegex = /^[a-z]{3,}(.[0-9a-z]*)?@([a-z]){2,}.[a-z]+(.in)*$/;
@@ -33,7 +33,7 @@ const Signup2 = () => {
   });
 
   //Uncomment later on
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //Create a change function to handle changes in the input fields:
   const change = (event) => {
@@ -111,6 +111,7 @@ const Signup2 = () => {
         <Grid item sx={{ display: "flex", flexDirection: "row" }}>
           <button
             id="loginbutton1"
+            onClick={() => navigate("/")}
             style={{
               width: "150px",
               height: "35px",
@@ -190,7 +191,7 @@ const Signup2 = () => {
             style={{
               width: "210px",
               height: "35px",
-              backgroundColor: "red",
+              backgroundColor: "#A03037",
               color: "white",
             }}
           >

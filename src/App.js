@@ -6,6 +6,7 @@ import Signup2 from "./pages/SigninSignup/Signup2";
 import Book from "./components/Book";
 import Dashboard from "./components/Dashboard";
 import CustomerDetails from "./components/CustomerDetails";
+import Success from "./pages/Successful/Success";
 // import BookCard from "./components/BookCard";
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
       {/* <Signup2 /> */}
 
       {/* <Book /> */}
-      <CustomerDetails />
+      {/* <CustomerDetails /> */}
+      {/* <Success /> */}
+      <Router />
     </div>
   );
 }
